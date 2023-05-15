@@ -1,5 +1,9 @@
 window:
   opacity: .98
+  decorations: "buttonless"
+  padding:
+    x: 10
+    y: 10
 font:
   size: 13
   normal:
@@ -8,3 +12,5 @@ font:
 scrolling:
   history: 1000
   multiplier: 5
+
+
