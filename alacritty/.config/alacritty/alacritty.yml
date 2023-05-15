@@ -1,0 +1,10 @@
+window:
+  opacity: .98
+font:
+  size: 13
+  normal:
+    family: 'Fira Code'
+
+scrolling:
+  history: 1000
+  multiplier: 5
