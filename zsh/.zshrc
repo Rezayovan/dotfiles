@@ -1,6 +1,7 @@
 #
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/scripts:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/rezayovan/.oh-my-zsh"
@@ -33,6 +34,8 @@ zstyle ':completion:*' menu select
 zmodload zsh/complist
 compinit
 _comp_options+=(globdots)
+
+# tmux sessionizer
 
 bindkey "^[[A" history-beginning-search-backward
 bindkey "^[[B" history-beginning-search-forward
@@ -99,6 +102,7 @@ bindkey "^[[B" history-beginning-search-forward
 plugins=(git  zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
+bindkey -s ^f  "tmux-sessionizer.sh\n"
 
 # User configuration
 
