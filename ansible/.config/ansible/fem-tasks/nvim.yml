@@ -1,0 +1,6 @@
+
+- name: install nvim
+  apt: name=neovim
+  tags:
+    - nvim
+

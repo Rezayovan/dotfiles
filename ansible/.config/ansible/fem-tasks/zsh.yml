@@ -1,0 +1,35 @@
+
+- name:  zsh
+  apt: name=zsh
+  tags:
+    - zsh
+- name: change shell
+  shell: chsh -s 'which zsh'
+  tags:
+    - zsh
+- name: install oh-my-zsh
+  shell: curl -fssl https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+  tags:
+    - zsh
+- name: install zsh autocomplete
+  ansible.builtin.git:
+    repo: 'https://github.com/zsh-users/zsh-autosuggestions.git'
+    dest: '~/.oh-my-zsh/plugins/zsh-autosuggestions'
+  tags:
+    - zsh
+- name: install node
+  apt:
+    name: ['nodejs', 'npm']
+  tags:
+    - node
+- name: install n
+  npm:
+    name: n
+    global: yes
+    state: present
+  tags:
+    - node
+- name: n 14
+  shell: n 15
+  tags:
+    - node

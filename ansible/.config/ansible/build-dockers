@@ -1,0 +1,5 @@
+
+#!/usr/bin/env bash
+
+docker build . -t new-computer
+docker build . -f nvim.dockerfile -t nvim-computer

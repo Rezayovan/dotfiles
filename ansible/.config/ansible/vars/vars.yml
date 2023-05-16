@@ -1,0 +1,4 @@
+
+
+
+os_type: "{{ ansible_distribution }}"

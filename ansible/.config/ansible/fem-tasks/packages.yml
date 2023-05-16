@@ -1,0 +1,16 @@
+
+- name: Install using homebrew
+  become: false
+  tags:
+    - packages
+  homebrew:
+    name: "{{item}}"
+  when: os_type == 'MacOSX'
+  loop: "{{packages_to_install}}"
+
+- name: Install using apt
+  tags:
+    - packages
+  command: apt install "{{item}}"
+  when: os_type == 'Ubuntu'
+  loop: "{{packages_to_install}}"

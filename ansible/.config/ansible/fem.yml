@@ -1,0 +1,26 @@
+
+- hosts: localhost
+  become: true
+  vars:
+    os_val: "{{ ansible_distribution }}"
+    packages_to_install:
+      - fzf
+
+  pre_tasks:
+    - name: Update cache
+      apt:
+        update_cache: true
+      tags:
+        - zsh
+        - node
+        - nvim
+  tasks:
+    - name: Install Packages
+      tags:
+        - packages
+      include_tasks: fem-tasks/packages.yml
+      vars:
+        os_type: "{{ os_val }}"
+        packages_to_install:
+          - fzf
+
