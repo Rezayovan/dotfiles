@@ -47,7 +47,8 @@ lsp.set_preferences({
 function _G.toggle_diagnostics()
   if vim.g.diagnostics_active then
     vim.g.diagnostics_active = false
-    --vim.lsp.diagnostic.clear(0)
+    vim.lsp.diagnostic.clear(0)
+
     vim.lsp.handlers["textDocument/publishDiagnostics"] = function() end
   else
     vim.g.diagnostics_active = true
@@ -76,7 +77,7 @@ lsp.on_attach(function(client, bufnr)
   vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
   vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
   vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
-  vim.api.nvim_set_keymap('n', '<leader>t', ':call v:lua.toggle_diagnostics()<CR>',  {noremap = true, silent = true})
+  --vim.api.nvim_set_keymap('n', '<leader>t', ':call v:lua.toggle_diagnostics()<CR>',  {noremap = true, silent = true})
 
 end)
 

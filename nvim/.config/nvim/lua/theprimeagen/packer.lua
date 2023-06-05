@@ -6,6 +6,16 @@ vim.cmd.packadd('packer.nvim')
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
+  use 'dstein64/vim-startuptime'
+  use 'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim'
+  use {
+      'mrcjkb/haskell-tools.nvim',
+      requires = {
+        'nvim-lua/plenary.nvim',
+        'nvim-telescope/telescope.nvim', -- optional
+      },
+      branch = '1.x.x', -- recommended
+  }
 
   use {
 	  'nvim-telescope/telescope.nvim', tag = '0.1.0',
