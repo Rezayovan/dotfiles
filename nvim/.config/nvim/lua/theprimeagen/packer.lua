@@ -5,6 +5,15 @@ vim.cmd.packadd('packer.nvim')
 
 return require('packer').startup(function(use)
   -- Packer can manage itself
+  use ({
+    "themaxmarchuk/tailwindcss-colors.nvim",
+    -- load only on require("tailwindcss-colors")
+    --module = "tailwindcss-colors"
+    -- run the setup function after plugin is loaded
+    config = function()
+      require("tailwindcss-colors").setup()
+    end
+    })
   use 'wbthomason/packer.nvim'
   use 'dstein64/vim-startuptime'
   use 'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim'

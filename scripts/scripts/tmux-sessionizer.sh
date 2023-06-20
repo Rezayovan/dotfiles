@@ -1,7 +1,7 @@
 
 #!/bin/bash
 
-session=$(find ~ ~/Desktop -mindepth 1 -maxdepth 1 -type d | fzf)
+session=$(find ~ ~/.config  ~/Desktop -mindepth 1 -maxdepth 1 -type d -o -type l | fzf)
 session_name=$(basename "$session" | tr . _)
 
 if ! tmux has-session -t "$session_name" 2> /dev/null; then
