@@ -15,6 +15,8 @@ return require('packer').startup(function(use)
     end
     })
   use 'wbthomason/packer.nvim'
+  use 'navarasu/onedark.nvim'
+  use 'mofiqul/vscode.nvim'
   use 'dstein64/vim-startuptime'
   use 'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim'
   use {
